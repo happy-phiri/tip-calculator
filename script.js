@@ -52,7 +52,7 @@ submitBtn.addEventListener("click", (cost, numPeople, percentage) => {
   const tip = ((cost / numPeople) * percentage) / 100;
   const total = billCharged / numberOfPeople + tip;
 
-  if (billCharged && numberOfPeople && tipPercentage) {
+  if (billCharged && numberOfPeople && (tipPercentage || customTip)) {
     tipAmount.textContent = `$${tip.toFixed(2)}`;
     totalPerPerson.textContent = `$${total.toFixed(2)}`;
   }
